@@ -84,7 +84,21 @@ class Dreieck
       @spitze = @spitze + Point.new(0,entfernung)
   end
 
-  
+  def langsam_horizontal_bewegen(entfernung)
+    absolute_entfernung = entfernung
+    if( sichtbar?)
+      delta  = 1
+      if entfernung < 0
+        delta = -1
+        absolute_entfernung = - entfernung
+      end
+      x_delta = delta
+      y_delta = 0
+      Leinwand.gib_einzige_instanz().
+          bewege(self,absolute_entfernung,x_delta,y_delta)
+    end
+    @spitze = @spitze + Point.new(entfernung,0)
+  end
   # Das Dreieck bewegt sich in beliebige Richtung mit einer gewissen Geschwindigkeit und einem Startwert.
   # Wenn das Objekt sichtbar ist, dann wird die Bewegung auf dem Bildschirm animiert. Kleine delta_x, delta_y 
   # bewirken 

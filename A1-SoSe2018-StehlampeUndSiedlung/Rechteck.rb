@@ -77,6 +77,22 @@ class Rechteck
     end
     @obere_linke_ecke = @obere_linke_ecke + Point.new(0,entfernung)
   end
+
+  def langsam_horizontal_bewegen(entfernung)
+    absolute_entfernung = entfernung
+    if( sichtbar?)
+      delta  = 1
+      if entfernung < 0
+        delta = -1
+        absolute_entfernung = - entfernung
+      end
+      x_delta = delta
+      y_delta = 0
+      Leinwand.gib_einzige_instanz().
+          bewege(self,absolute_entfernung,x_delta,y_delta)
+    end
+    @obere_linke_ecke = @obere_linke_ecke + Point.new(entfernung,0)
+  end
   
   
   # Das Rechteck bewegt sich in beliebige Richtung mit einer gewissen Geschwindigkeit und einem Startwert.

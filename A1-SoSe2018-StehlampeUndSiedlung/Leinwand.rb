@@ -60,7 +60,7 @@ class Leinwand < TkCanvas
     y1 = dreieck.spitze.y
     x2 = x1 - dreieck.breite/2
     x3 = x1 + dreieck.breite/2
-    y2 = y1 + dreieck.hoehe/2
+    y2 = y1 + dreieck.hoehe
     y3 = y2
     alte_figur_loeschen(dreieck)
     dreieck_graphik = TkcPolygon.new(self,x1,y1,x2,y2,x3,y3, :fill => dreieck.farbe(), :outline => dreieck.farbe())

@@ -6,14 +6,19 @@ class Haus
  #def initialize(dach_farbe)
  #end
   def initialize(dach_farbe)
-    @dach_farbe = dach_farbe
-    @dach = Dreieck.new()
-    @fassade = Rechteck.new()
+    @dach = Dreieck.new(50,10,20,40,dach_farbe)
+    @fassade = Rechteck.new(30,30,40,40,"gelb")
+    @tuer = Rechteck.new(50,50,10,20,"gruen")
+    @fenster = Rechteck.new(35,40,10,10,"weiss")
   end
   # TODO
  #def sichtbar_machen()
  #end
-  def  sichtbar_machen
+  def  sichtbar_machen()
+    @dach.sichtbar_machen()
+    @fassade.sichtbar_machen()
+    @tuer.sichtbar_machen()
+    @fenster.sichtbar_machen()
 
   end
 
