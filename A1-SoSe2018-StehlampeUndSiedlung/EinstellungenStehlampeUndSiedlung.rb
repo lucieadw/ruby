@@ -36,7 +36,9 @@ $METHOD_CONFIG = {
    :nacht_ansicht => {:label => :'nacht_ansicht()'},
   },
   :Siedlung => {
-    :sichtbar_machen => {:label => :'sichtbar_machen()'}
+    :sichtbar_machen => {:label => :'sichtbar_machen()'},
+    :nacht => {:label => :'Nacht'},
+    :tag => {:label => :'Tag'}
   },
   # Konfiguration der Klassenmethoden von StehLampe
   :StehLampe_class => {
