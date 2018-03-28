@@ -8,10 +8,10 @@ class Siedlung
     @haus3 = Haus.new("gruen",)
     @haus4 = Haus.new("blau",2.5)
 
-    @haus1.auf_position_setzen(70, 150)
-    @haus2.auf_position_setzen(140, 170)
-    @haus3.auf_position_setzen(210, 150)
-    @haus4.auf_position_setzen(280, 170)
+    @haus1.auf_position_setzen(70, 210)
+    @haus2.auf_position_setzen(140, 230)
+    @haus3.auf_position_setzen(210, 210)
+    @haus4.auf_position_setzen(280, 230)
 
     @sonne = Kreis.new(370, 60, 20, "orange")
     @mond = Kreis.new(362, 60, 20, "weiss")
@@ -32,10 +32,10 @@ class Siedlung
 
 
   def nacht()
-    @stern1.sichtbar_machen
-    @stern2.sichtbar_machen
-    @stern3.sichtbar_machen
-    @stern4.sichtbar_machen
+    @stern1.sichtbar_machen()
+    @stern2.sichtbar_machen()
+    @stern3.sichtbar_machen()
+    @stern4.sichtbar_machen()
     @mond.sichtbar_machen()
     @haus1.nacht_ansicht()
     @haus2.nacht_ansicht()
