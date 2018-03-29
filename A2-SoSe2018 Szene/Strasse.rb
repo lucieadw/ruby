@@ -4,7 +4,7 @@ require "./Leinwand"
 class Strasse
 
   def initialize(x, y, laenge, breite)
-    @strasse = Rechteck.new(x , y, strassen_laenge, breite, "hellgrau")
+    @strasse = Rechteck.new(x , y, strassen_laenge, breite, "grau")
   end
 
   def sichtbar_machen()

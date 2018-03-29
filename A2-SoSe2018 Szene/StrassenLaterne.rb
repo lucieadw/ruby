@@ -5,9 +5,9 @@ require "./Rechteck"
 class StrassenLaterne
 
   def initialize()
-    @schirm = Kreis.new(121, 70, 20, "gelb", false)
-    @stiel = Rechteck.new(118, 90, 6, 50, "grau", false)
-    @fuss = Rechteck.new(100, 140, 40, 8, "grau", false)
+    @schirm = Kreis.new(121, 81, 14, "orange", false)
+    @stiel = Rechteck.new(118, 90, 5, 45, "grau", false)
+    @fuss = Rechteck.new(106, 132, 30, 5, "grau", false)
   end
 
   def sichtbar_machen()
@@ -39,6 +39,18 @@ class StrassenLaterne
 
   def hoehe()
     @fuss.hoehe + @stiel.hoehe + @schirm.radius*2
+  end
+
+  def tag_ansicht()
+    @schirm.farbe_aendern("orange")
+    @stiel.farbe_aendern("grau")
+    @fuss.farbe_aendern("grau")
+  end
+
+  def nacht_ansicht()
+    @schirm.farbe_aendern("gelb")
+    @stiel.farbe_aendern("schwarz")
+    @fuss.farbe_aendern("schwarz")
   end
   def clear()
     Leinwand.gib_einzige_instanz().alles_loeschen()

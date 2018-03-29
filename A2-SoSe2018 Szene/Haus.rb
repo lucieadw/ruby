@@ -3,18 +3,18 @@ require "./Dreieck"
 class Haus
 
   def initialize(dach_farbe)
-    faktor = 2
+    faktor = 1.5
     @dach_farbe = dach_farbe
     @dach = Dreieck.new(50, 10, 20 * faktor, 40 * faktor, @dach_farbe)
     @fassade = Rechteck.new(@dach.spitze.x - @dach.breite / 2,
                             @dach.spitze.y + @dach.hoehe,
-                            40 * faktor, 40 * faktor, "orange")
+                            40 * faktor, 40 * faktor, "hellgrau")
     @tuer = Rechteck.new(@dach.spitze.x - @dach.breite / 2 + @fassade.breite / 2,
-                         @dach.spitze.y + @dach.hoehe + @fassade.hoehe / 2,
-                         10 * faktor, 20 * faktor, "gruen")
+                         @dach.spitze.y + @dach.hoehe + @fassade.hoehe / 1.5,
+                         10 * faktor, 13 * faktor, "gruen")
     @fenster = Rechteck.new(@dach.spitze.x - @dach.breite / 2 + @fassade.breite / 5,
                             @dach.spitze.y + @dach.hoehe + @fassade.hoehe / 5,
-                            10 * faktor, 10 * faktor, "hellgrau")
+                            10 * faktor, 10 * faktor, "weiss")
   end
 
   def sichtbar_machen()
@@ -45,13 +45,28 @@ class Haus
   end
 
   def hoehe()
-  @dach.hoehe + @fassade.hoehe
+    @dach.hoehe + @fassade.hoehe
 
   end
 
   def breite()
-     @fassade.breite
-    end
+    @fassade.breite
+  end
+
+  def tages_ansicht()
+    @dach.farbe_aendern(@dach_farbe)
+    @fassade.farbe_aendern("hellgrau")
+    @tuer.farbe_aendern("gruen")
+    @fenster.farbe_aendern("weiss")
+  end
+
+
+  def nacht_ansicht()
+    @dach.farbe_aendern("hellgrau")
+    @fassade.farbe_aendern("grau")
+    @tuer.farbe_aendern("schwarz")
+    @fenster.farbe_aendern("schwarz")
+  end
 
   def clear()
     Leinwand.gib_einzige_instanz().alles_loeschen()

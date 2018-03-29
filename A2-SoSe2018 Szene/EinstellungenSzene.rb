@@ -9,6 +9,8 @@ $METHOD_CONFIG = {
         :sichtbar_machen => {:label => :sichtbar_machen},
         :animation => {:label => :animation},
         :reset_animation => {:label => :reset_animation},
+        :tag => {:label => :tag},
+        :nacht => {:label => :nacht},
         :clear => {:label => :clear}
     },
     :StrassenSzene_class => {
