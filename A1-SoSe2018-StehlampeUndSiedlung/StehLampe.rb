@@ -73,16 +73,15 @@ class StehLampe
 
 
   def position()
-    #@fuss.obere_linke_ecke + Point.new(0, @fuss.hoehe)
     Point.new(@fuss.obere_linke_ecke.x, @fuss.obere_linke_ecke.y + @fuss.hoehe)
   end
 
-
+# die Auskommentierten sachen sind hier nur verscheidene Herangehensweisen, die ich getestet habe
   def auf_position_setzen(ziel_pos_x, ziel_pos_y)
     #position_neu = Point.new(ziel_pos_x,ziel_pos_y) - self.position
     delta = Point.new(ziel_pos_x - self.position.x, ziel_pos_y - self.position.y )
     #delta_x = ziel_pos_x - self.position.x
-    #delta_y = ziel_pos_y - self.position.y
+    #delta_y = ziel_pos_y - self.position.y (mit .bewegen)
 
     @schirm.bewegen_um_punkt(delta)
     @stiel.bewegen_um_punkt(delta)

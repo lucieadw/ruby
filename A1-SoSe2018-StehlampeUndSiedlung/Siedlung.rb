@@ -5,13 +5,15 @@ class Siedlung
   def initialize()
     @haus1 = Haus.new("gelb")
     @haus2 = Haus.new("rot",2.5)
-    @haus3 = Haus.new("gruen",)
+    @haus3 = Haus.new("gruen",) # wenn kein faktor da steht, ist der der default faktor aus der class Haus
     @haus4 = Haus.new("blau",2.5)
 
     @haus1.auf_position_setzen(70, 210)
     @haus2.auf_position_setzen(140, 230)
     @haus3.auf_position_setzen(210, 210)
     @haus4.auf_position_setzen(280, 230)
+
+    # Alles hier ist durch rumschieben entstanden, Sonne, Mond und Sterne brauchen wir auch nicht.
 
     @sonne = Kreis.new(370, 60, 20, "orange")
     @mond = Kreis.new(362, 60, 20, "weiss")

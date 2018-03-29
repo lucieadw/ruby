@@ -3,16 +3,21 @@ require "./Dreieck"
 
 class Haus
 
+# Hier habe ich noch einen Faktor eingebaut, der die Größe der Häuser verändert. Das brauchen wir aber nicht.
+# Genauso wie die Abhängigkeiten der Parameter. Da können auch einfach zahlen stehen
 
-  def initialize(dach_farbe,faktor = 1.8)
+  def initialize(dach_farbe, faktor = 1.8)
     @dach_farbe = dach_farbe
     @dach = Dreieck.new(50, 10, 20 * faktor, 40 * faktor, @dach_farbe)
+
     @fassade = Rechteck.new(@dach.spitze.x - @dach.breite / 2,
                             @dach.spitze.y + @dach.hoehe,
                             40 * faktor, 40 * faktor, "orange")
+
     @tuer = Rechteck.new(@dach.spitze.x - @dach.breite / 2 + @fassade.breite / 2,
                          @dach.spitze.y + @dach.hoehe + @fassade.hoehe / 2,
                          10 * faktor, 20 * faktor, "gruen")
+
     @fenster = Rechteck.new(@dach.spitze.x - @dach.breite / 2 + @fassade.breite / 5,
                             @dach.spitze.y + @dach.hoehe + @fassade.hoehe / 5,
                             10 * faktor, 10 * faktor, "hellgrau")
@@ -24,7 +29,6 @@ class Haus
     @fassade.sichtbar_machen()
     @tuer.sichtbar_machen()
     @fenster.sichtbar_machen()
-
   end
 
 
