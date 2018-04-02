@@ -13,12 +13,13 @@ class Bus
     @rad1 = Kreis.new(31, 35, 6, "schwarz")
     @rad2 = Kreis.new(54, 35, 6, "schwarz")
 
-    if @ansicht == "osten"
-      @nase = Rechteck.new(@fahrgestell.obere_linke_ecke.x + @fahrgestell.breite, @fahrgestell.hoehe / 2.0 + 2, @fahrgestell.breite / 5.0, @fahrgestell.hoehe / 2.0 - 2, "orange")
-
-    elsif @ansicht == "westen"
-      @nase = Rechteck.new(@fahrgestell.obere_linke_ecke.x - @fahrgestell.breite / 5.0, @fahrgestell.hoehe / 2.0 + 2, @fahrgestell.breite / 5.0, @fahrgestell.hoehe / 2.0 - 2, "orange")
-
+    case @ansicht
+      when "osten"
+        @nase = Rechteck.new(@fahrgestell.obere_linke_ecke.x + @fahrgestell.breite, @fahrgestell.hoehe / 2.0 + 2, @fahrgestell.breite / 5.0, @fahrgestell.hoehe / 2.0 - 2, "orange")
+      when "westen"
+        @nase = Rechteck.new(@fahrgestell.obere_linke_ecke.x - @fahrgestell.breite / 5.0, @fahrgestell.hoehe / 2.0 + 2, @fahrgestell.breite / 5.0, @fahrgestell.hoehe / 2.0 - 2, "orange")
+      else
+        @nase = Rechteck.new(@fahrgestell.obere_linke_ecke.x + @fahrgestell.breite, @fahrgestell.hoehe / 2.0 + 2, @fahrgestell.breite / 5.0, @fahrgestell.hoehe / 2.0 - 2, "orange")
     end
   end
 
