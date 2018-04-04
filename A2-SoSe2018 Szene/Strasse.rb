@@ -4,7 +4,7 @@ require "./Leinwand"
 class Strasse
 
   def initialize(x, y, laenge, breite)
-    @strasse = Rechteck.new(x , y, strassen_laenge, breite, "grau")
+    @strasse = Rechteck.new(x , y, laenge, breite, "grau")
   end
 
   def sichtbar_machen()
@@ -12,7 +12,7 @@ class Strasse
   end
 
   def strassen_laenge()
-    Leinwand.gib_einzige_instanz().breite()
+    @strasse.laenge
   end
 
   def breite()

@@ -4,13 +4,6 @@ require "./Rechteck"
 
 class StehLampe
 
-  # Eine Stehlampe setzt sich aus den Komponenten
-  # Schirm, Stiel, Fuss und 4 Leuchtstrahlen zusammen
-  # Die Komponenten der Stehlampe sind geometrische Objekte der
-  # Klassen Kreis, Rechteck, Dreieck.
-  # Diese Objekte müssen mit der richtigen Farbe, Größe und Position
-  # erzeugt werden, damit die Zusammenstellung eine Stehlampe ergibt.
-
   def initialize()
     @schirm = Kreis.new(120, 60, 40, "gelb", false)
     @stiel = Rechteck.new(116, 90, 10, 80, "gruen", false)

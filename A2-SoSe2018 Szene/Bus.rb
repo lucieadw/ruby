@@ -24,13 +24,13 @@ class Bus
   end
 
   def sichtbar_machen()
-    @fahrgestell.sichtbar_machen
-    @nase.sichtbar_machen
-    @fenster1.sichtbar_machen
-    @fenster2.sichtbar_machen
-    @fenster3.sichtbar_machen
-    @rad1.sichtbar_machen
-    @rad2.sichtbar_machen
+    @fahrgestell.sichtbar_machen()
+    @nase.sichtbar_machen()
+    @fenster1.sichtbar_machen()
+    @fenster2.sichtbar_machen()
+    @fenster3.sichtbar_machen()
+    @rad1.sichtbar_machen()
+    @rad2.sichtbar_machen()
   end
 
   def position()
@@ -40,13 +40,7 @@ class Bus
   def auf_position_setzen(x, y)
     delta_x = x - position.x
     delta_y = y - position.y
-    @fahrgestell.bewegen(delta_x, delta_y, 1, 0, 0)
-    @nase.bewegen(delta_x, delta_y, 1, 0, 0)
-    @fenster1.bewegen(delta_x, delta_y, 1, 0, 0)
-    @fenster2.bewegen(delta_x, delta_y, 1, 0, 0)
-    @fenster3.bewegen(delta_x, delta_y, 1, 0, 0)
-    @rad1.bewegen(delta_x, delta_y, 1, 0, 0)
-    @rad2.bewegen(delta_x, delta_y, 1, 0, 0)
+    bewegen(delta_x, delta_y, 1, 0, 0)
   end
 
   def bewegen(delta_x, delta_y, wdh, wdh_nach, starten_nach)

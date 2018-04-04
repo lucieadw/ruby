@@ -55,10 +55,7 @@ class Haus
   def auf_position_setzen(x, y)
     delta_x = x - position.x
     delta_y = y - position.y
-    @dach.bewegen(delta_x, delta_y, 1, 0, 0)
-    @fassade.bewegen(delta_x, delta_y, 1, 0, 0)
-    @tuer.bewegen(delta_x, delta_y, 1, 0, 0)
-    @fenster.bewegen(delta_x, delta_y, 1, 0, 0)
+    bewegen(delta_x, delta_y, 1, 0, 0)
   end
 
 

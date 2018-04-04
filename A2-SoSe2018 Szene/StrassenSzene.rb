@@ -7,7 +7,7 @@ require "./Haus"
 class StrassenSzene
 
   def initialize()
-    @strasse = Strasse.new(0, 200, nil, 140)
+    @strasse = Strasse.new(0, 200, Leinwand.gib_einzige_instanz().breite(), 140)
     @haus1 = Haus.new("gruen")
     @haus2 = Haus.new("rot")
     @haus3 = Haus.new("gruen")
@@ -18,6 +18,7 @@ class StrassenSzene
     @haus7 = Haus.new("gruen")
     @haus8 = Haus.new("orange")
 
+    # mit if bedingung häuser ezeugen bis position.x > straßen breite? aber wie sichtbar machen?
     @haus1.auf_position_setzen(@strasse.links + 450, @strasse.oben - 2)
     @haus2.auf_position_setzen(@haus1.position.x + @haus1.breite + 50, @strasse.oben - 2)
     @haus3.auf_position_setzen(@haus2.position.x + @haus2.breite + 80, @strasse.oben - 2)
@@ -91,6 +92,7 @@ class StrassenSzene
   end
 
   def busse_positionieren()
+    # schleife für abhängigkeit zur straße?
     s = 20 #standardabstand zum Straßenrand
     @bus1.auf_position_setzen(@strasse.rechts - @bus1.breite - 100, @strasse.oben + @bus1.hoehe + s)
     @bus2.auf_position_setzen(@strasse.links + 100, @strasse.unten - s - 10)

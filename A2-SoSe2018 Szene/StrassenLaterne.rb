@@ -21,10 +21,9 @@ class StrassenLaterne
   end
 
   def auf_position_setzen(ziel_pos_x, ziel_pos_y)
-    delta = Point.new(ziel_pos_x - position.x, ziel_pos_y - position.y)
-    @schirm.bewegen_um_punkt(delta)
-    @stiel.bewegen_um_punkt(delta)
-    @fuss.bewegen_um_punkt(delta)
+    delta_x = ziel_pos_x - position.x
+    delta_y = ziel_pos_y - position.y
+    bewegen(delta_x, delta_y, 1, 0, 0)
   end
 
   def bewegen(delta_x, delta_y, wdh, wdh_nach, starten_nach)
