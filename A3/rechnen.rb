@@ -4,11 +4,9 @@ class Rechnen
   end
 
   def sum_quadrat(n)
-    i = 1
     sum = 0
-    n.times do
+    n.times do |i|
       sum += i ** 2
-      i += 1
     end
     return sum
   end

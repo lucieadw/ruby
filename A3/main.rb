@@ -85,17 +85,21 @@ class Main
 
         print "Gib eine Zeichenkette ein:"
         zeichenkette = gets.chomp
-
+        puts
         puts zk.zeichen_ausgeben(zeichenkette)
         print "Hat die Zeichenkette eine gerade Länge? "
         puts zk.gerade_laenge?(zeichenkette)
         print "Hat die Zeichenkette eine ungerade Länge? "
         puts zk.ungerade_laenge?(zeichenkette)
-        puts zk.drucke_dreieck1(zeichenkette)
-        puts zk.drucke_dreieck2(zeichenkette)
-        puts zk.drucke_dreieck3(zeichenkette)
-        puts zk.eieruhr(zeichenkette)
-
+        puts
+        zk.drucke_dreieck1(zeichenkette)
+        puts
+        zk.drucke_dreieck2(zeichenkette)
+        puts
+        zk.drucke_dreieck3(zeichenkette)
+        puts
+        zk.eieruhr(zeichenkette)
+        puts
         print "Wie oft soll iteriert werden? "
         iterationen = gets.chomp.to_i
         print "Über welche Zeichenkette? "
