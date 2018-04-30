@@ -4,15 +4,16 @@ class Modulo
     @wochentage = %w(Sonntag Montag Dienstag Mittwoch Donnerstag Freitag Samstag)
   end
 
-  # Basis wird hier nicht gebraucht?
+  # Basis wird hier nicht gebraucht
   def to_string(zahl)
 
     if zahl <= 10
       return zahl.to_s
 
     elsif zahl > 10
-      ("A".ord() - 10) + zahl
+      erg = ("A".ord() - 10) + zahl
     end
+    erg.chr
   end
 
   def zahl_umwandeln(dez_zahl, in_basis)

@@ -50,9 +50,9 @@ class Main
         in_basis = gets.chomp.to_i
         puts "Zeichenkette: " + m.zahl_umwandeln(dez_zahl, in_basis).to_s
 
-        print "Tag: "
+        print "Tag (als Zahl): "
         tag = gets.chomp.to_i
-        print "Monat: "
+        print "Monat (als Zahl): "
         monat = gets.chomp.to_i
         print "Jahr: "
         jahr = gets.chomp.to_i

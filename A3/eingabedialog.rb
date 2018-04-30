@@ -9,7 +9,7 @@ class Eingabedialog
     while true
       puts "Bitte geben Sie eine Zahl für einen einfachen Addierer ein. Mit exit können Sie den Addierer beenden."
       eingabe = normalisieren(gets.chomp)
-      if eingabe.to_f > 0
+      if eingabe.to_f.to_s == eingabe && eingabe.to_f >= 0
         print "Sum_alt = #{sum} Zahl = #{eingabe}"
         sum = sum + eingabe.to_f
         puts " Sum_neu = #{sum}"
@@ -27,3 +27,4 @@ class Eingabedialog
     input.downcase.strip
   end
 end
+
