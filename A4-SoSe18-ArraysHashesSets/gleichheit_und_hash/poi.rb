@@ -8,13 +8,18 @@ class POI
     "#{@name}"
   end
 
-  def eql?(other)
+  # def eql?(other)
+  #   return false if other.nil?
+  #   return true if self.equal?(other)
+  #   return false if self.class != other.class
+  #   return @name.eql? (other.name)
+  # end
+
+  def ==(other)
     return false if other.nil?
     return true if self.equal?(other)
-    return false if self.class != other.class
-    return @name.eql? (other.name)
+    return @name.== (other.name)
   end
-
   def hash()
     return @name.hash
   end
