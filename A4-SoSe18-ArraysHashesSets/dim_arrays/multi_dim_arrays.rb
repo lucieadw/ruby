@@ -1,16 +1,22 @@
 def random_initialize_2dim(max_rows, max_row_length, max_value)
-  ary_2dim = Array.new(rand(max_rows + 1)) {Array.new(rand(max_row_length + 1)) {rand(max_value + 1)}}
-  return ary_2dim
+  if max_value < 0
+    puts "Max_value muss eine positive Zahl sein"
+  else
+    ary_2dim = Array.new(rand(max_rows + 1)) {Array.new(rand(max_row_length + 1)) {rand(max_value + 1)}}
+    return ary_2dim
+  end
 end
 
 def max_2dim(ary_2dim)
   if ary_2dim.empty?
     return nil
   end
-  maxi = 0
+  maxi = nil
   ary_2dim.each {|ary|
     new_max = ary.max
-    if new_max != nil && new_max > maxi
+    if maxi == nil
+      maxi = new_max
+    elsif new_max != nil && new_max > maxi
       maxi = new_max
     end
   }
@@ -18,16 +24,25 @@ def max_2dim(ary_2dim)
 end
 
 def random_initialize_3dim(max_width, max_height, max_depth, max_value)
-  ary_3dim = Array.new(rand(max_width + 1)) {Array.new(rand(max_height + 1)) {Array.new(rand(max_depth + 1)) {rand(max_value + 1)}}}
-  return ary_3dim
+  if max_value < 0
+    puts "Max_value muss eine positive Zahl sein."
+  else
+    ary_3dim = Array.new(rand(max_width + 1)) {Array.new(rand(max_height + 1)) {Array.new(rand(max_depth + 1)) {rand(max_value + 1)}}}
+    return ary_3dim
+  end
 end
 
 def max_3dim(ary_3dim)
-  maxi = 0
+  if ary_3dim.empty?
+    return nil
+  end
+  maxi = nil
   ary_3dim.each {|ary|
     ary.each {|ary2|
       new_max = ary2.max
-      if new_max != nil && new_max > maxi
+      if maxi == nil
+        maxi = new_max
+      elsif new_max != nil && new_max > maxi
         maxi = new_max
       end
     }

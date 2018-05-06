@@ -12,6 +12,16 @@ class GeoCoord
     "#{@region}: #{@breiten_grad} #{@laengen_grad}"
   end
 
+  def eql?(other)
+    return false if other.nil?
+    return true if self.equal?(other)
+    return false if self.class != other.class
+    return [@region, @breiten_grad, @laengen_grad].eql?([other.region, other.breiten_grad, other.laengen_grad])
+  end
+
+  def hash()
+    return @region.hash + @breiten_grad.hash + @laengen_grad.hash
+  end
 end
 
 class Grad
@@ -29,5 +39,16 @@ class Grad
     "#{@himmels_richtung} #{@grad}°#{@minuten}'#{@sekunden}.#{@dezimal_sekunden}\""
   end
 
+  def eql?(other)
+    return false if other.nil?
+    return true if self.equal?(other)
+    return false if self.class != other.class
+    return [@himmels_richtung, @grad, @minuten,@sekunden,@dezimal_sekunden]
+               .eql?([other.himmels_richtung, other.grad, other.minuten,other.sekunden,other.dezimal_sekunden])
+  end
+
+  def hash()
+    return @himmels_richtung.hash + @grad.hash + @minuten.hash + @sekunden.hash + @dezimal_sekunden.hash
+  end
 end
 
