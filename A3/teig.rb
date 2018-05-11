@@ -5,5 +5,4 @@ class Teig
 
   def to_string()
      "besteht aus #{@teig}"
-  end
-end
+  e
