@@ -1,5 +1,6 @@
 class POI
   attr_reader :name
+
   def initialize(name)
     @name = name
   end
@@ -20,6 +21,7 @@ class POI
     return true if self.equal?(other)
     return @name.== (other.name)
   end
+
   def hash()
     return @name.hash
   end

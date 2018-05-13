@@ -19,6 +19,10 @@ class GeoCoord
     return [@region, @breiten_grad, @laengen_grad].eql?([other.region, other.breiten_grad, other.laengen_grad])
   end
 
+  def ==(other)
+      return eql?(other)
+  end
+
   def hash()
     return @region.hash + @breiten_grad.hash + @laengen_grad.hash
   end
