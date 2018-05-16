@@ -16,13 +16,14 @@ class POI
   #   return @name.eql? (other.name)
   # end
 
+  # reicht weil intern nur die einzelnen Stellen des Arrays verglichen werden
   def ==(other)
     return false if other.nil?
     return true if self.equal?(other)
     return @name.== (other.name)
   end
 
-  def hash()
-    return @name.hash
-  end
+  # def hash()
+  #   return @name.hash
+  # end
 end

@@ -23,7 +23,7 @@ class GeodataTest < Test::Unit::TestCase
   end
 
   def test_with_array
-    assert_equal([@hamburg, @seoul, @moskau].sort_by() {|geo| geo.region()}, @geo_database.keys().sort_by() {|geo| geo.region()})
+    assert_equal([@hamburg, @seoul, @moskau].sort_by {|geo| geo.region()}, @geo_database.keys().sort_by {|geo| geo.region()})
   end
 
 end

@@ -83,42 +83,70 @@ end
 
 
 def scheibe_vertikal_seite(wuerfel, x)
-  vert_seite = Array.new()
-  wuerfel[x].each {|yz|
-    vert_seite << yz
-  }
-  return vert_seite
+  size = wuerfel[0].size()
+  scheibe = Array.new()
+  for y in (0...size)
+    kante = Array.new()
+    for z in (0...size)
+      kante << wuerfel[x][y][z]
+    end
+    scheibe << kante
+  end
+  return scheibe
 end
 
 
 def scheibe_vertikal_vorne_y_x(wuerfel, z)
-  vorne = Array.new()
-  wuerfel.each {|xyz|
-    y_ary = Array.new()
-    xyz.each {|yz|
-      y_ary << yz[z]
-    }
-    vorne << y_ary
-  }
-  return vorne
+  size = wuerfel[0].size()
+  scheibe = Array.new()
+  for x in (0...size)
+    kante = Array.new()
+    for y in (0...size)
+      kante << wuerfel[x][y][z]
+    end
+    scheibe << kante
+  end
+  return scheibe
+
 end
 
-# was will das machen
-# def scheibe_vertikal_vorne_x_y(wuerfel, z)
-# end
+def scheibe_vertikal_vorne_x_y(wuerfel, z)
+  size = wuerfel[0].size()
+  scheibe = Array.new()
+  for y in (0...size)
+    kante = Array.new()
+    for x in (0...size)
+      kante << wuerfel[x][y][z]
+    end
+    scheibe << kante
+  end
+  return scheibe
+end
 
 
 def scheibe_horizontal_z_x(wuerfel, y)
-  hor_seite = Array.new()
-  wuerfel.each {|xyz|
-    z_ary = Array.new()
-    xyz[y].each {|yz|
-      z_ary << yz}
-    hor_seite << z_ary
-  }
-  return hor_seite
+  size = wuerfel[0].size()
+  scheibe = Array.new()
+  for x in (0...size)
+    kante = Array.new()
+    for z in (0...size)
+      kante << wuerfel[x][y][z]
+    end
+    scheibe << kante
+  end
+  return scheibe
 end
 
-# was
-# def scheibe_horizontal_x_z(wuerfel, y)
-# end
+
+def scheibe_horizontal_x_z(wuerfel, y)
+  size = wuerfel[0].size()
+  scheibe = Array.new()
+  for z in (0...size)
+    kante = Array.new()
+    for x in (0...size)
+      kante << wuerfel[x][y][z]
+    end
+    scheibe << kante
+  end
+  return scheibe
+end

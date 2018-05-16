@@ -38,10 +38,7 @@ class GeodataReader
   def to_s()
     "#{@geo_data_table.map() {|key, val| "#{key} => #{val.join(",")}"}.join("\n")}"
   end
-  #
-  # def [](geo_coord)
-  #   return @geo_data_table[geo_coord]
-  # end
+
 end
 
 #gr = GeodataReader.new("geo_database")

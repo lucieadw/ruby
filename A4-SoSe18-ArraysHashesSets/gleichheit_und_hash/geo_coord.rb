@@ -20,7 +20,9 @@ class GeoCoord
   end
 
   def ==(other)
-      return eql?(other)
+    return false if other.nil?
+    return true if self.equal?(other)
+    return [@region, @breiten_grad, @laengen_grad].== ([other.region, other.breiten_grad, other.laengen_grad])
   end
 
   def hash()
@@ -47,8 +49,15 @@ class Grad
     return false if other.nil?
     return true if self.equal?(other)
     return false if self.class != other.class
-    return [@himmels_richtung, @grad, @minuten,@sekunden,@dezimal_sekunden]
-               .eql?([other.himmels_richtung, other.grad, other.minuten,other.sekunden,other.dezimal_sekunden])
+    return [@himmels_richtung, @grad, @minuten, @sekunden, @dezimal_sekunden]
+               .eql?([other.himmels_richtung, other.grad, other.minuten, other.sekunden, other.dezimal_sekunden])
+  end
+
+  def ==(other)
+    return false if other.nil?
+    return true if self.equal?(other)
+    return [@himmels_richtung, @grad, @minuten, @sekunden, @dezimal_sekunden]
+               .== ([other.himmels_richtung, other.grad, other.minuten, other.sekunden, other.dezimal_sekunden])
   end
 
   def hash()
