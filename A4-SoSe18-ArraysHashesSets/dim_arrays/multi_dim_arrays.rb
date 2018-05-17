@@ -2,6 +2,7 @@ def random_initialize_2dim(max_rows, max_row_length, max_value)
   if max_value < 0
     puts "Max_value muss eine positive Zahl sein"
   else
+    #+1 weil sonst grenze augeschlossen ist
     ary_2dim = Array.new(rand(max_rows + 1)) {Array.new(rand(max_row_length + 1)) {rand(max_value + 1)}}
     return ary_2dim
   end
@@ -11,6 +12,7 @@ def max_2dim(ary_2dim)
   if ary_2dim.empty?
     return nil
   end
+  # nil damit auch bei negativen zahlen maximum bestimmbar
   maxi = nil
   ary_2dim.each {|ary|
     new_max = ary.max
