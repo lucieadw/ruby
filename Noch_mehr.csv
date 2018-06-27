@@ -1,0 +1,13 @@
+Name;Size;Mass;Distance in AU;Moons
+Sol;   696342;   1.9884E6;0   ;
+    Mercury;4879;0.330;  0.387;
+       
+Venus;12104;4.869;    0.723   ;
+Terra;12756;5.974;1;   Luna
+Mars;6792;0.642;1.524;  Deimos,  Phobos 
+
+
+Jupiter;142984;  1.899E3;5.203;Europa,Ganymede, Io,   Callisto,  Himalia,Amalthea,Elara,Thebe
+   Saturn;120536;5.685E2;  9.583   ;   Titan,Rhea,Iapetus,   Dione,Tethys,  Enceladus,Mimas
+ Uranus;51118;8.683E1;19.201;Miranda,Ariel,Umbriel,  Titania,       Oberon
+Neptune;   49528;   1.024E1; 30.07;Triton,  Proteus,Nereid
